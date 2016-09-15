@@ -5,7 +5,6 @@ from subprocess import Popen, PIPE, call
 from os.path import dirname, realpath
 from sys import exit
 
-
 def update():
 	Popen(dirname(realpath(__file__)) + "/reloader.py", shell=True)
 	exit("try to update")
