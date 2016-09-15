@@ -7,7 +7,7 @@ import git
 
 
 def update():
-	Popen(dirname(realpath(__file__)) + "reloader.py", shell=True)
+	Popen(dirname(realpath(__file__)) + "/reloader.py", shell=True)
 	sys.exit("try to update")
 
 def main():
