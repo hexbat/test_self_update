@@ -40,7 +40,7 @@ def main():
 	try:
 		input("press any key")
 	except EOFError:
-		exit("no input")
+		exit("\nno input")
 	
 if __name__ == "__main__":
 	main()
