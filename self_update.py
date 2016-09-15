@@ -5,21 +5,8 @@ from subprocess import Popen, PIPE, call
 import git
 
 def update():
-	cmd = 'git pull'
-	p = Popen(cmd.split(), stdout=PIPE, stderr=PIPE)
-	out, err = p.communicate()
-	if err:
-		print('Error while pull')
-		print(err)
-		error_code += 1
-	elif out:
-		print(out)
-		print('Try to update')
-		args = sys.argv[:]
-		print(args)
-		print('Re-spawning %s' % ' '.join(args))
-		args.insert(0,sys.executable)
-		#os.execv(sys.executable, args)
+	Popen("reloader.py", shell=True)
+	sys.exit("try to update")
 
 def main():
 	remote_hash = ''
