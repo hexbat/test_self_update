@@ -4,6 +4,10 @@
 from subprocess import Popen, PIPE, call
 from os.path import dirname, realpath
 from sys import exit
+import config
+import telebot
+
+bot = telebot.TeleBot(config.token)
 
 def update():
 	Popen(dirname(realpath(__file__)) + "/reloader.py", shell=True)
@@ -41,6 +45,20 @@ def main():
 	except EOFError:
 		exit("\nno input")
 	
+@bot.message_handler(commands=['update'])
+def repeat_all(message):
+	bot.send_message(message.chat.id, "Try to update")
+	print("Try to update")
+	update()
+
+@bot.message_handler(commands=['echo'])
+def repeat_all(message):
+	bot.send_message(message.chat.id, message.text)
+
+
+
+
 if __name__ == "__main__":
-	main()
+	bot.polling(none_stop=True)	
+#main()
 
