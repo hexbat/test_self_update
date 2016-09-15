@@ -12,7 +12,7 @@ def main():
     local_hash = out
   if err:
     print('Error while getting local hash')
-  cmd = 'git ls-remote https://github.com/hexbat/test/test_self_update.git HEAD'
+  cmd = 'git ls-remote https://github.com/hexbat/test_self_update.git HEAD'
   p = Popen(cmd.split(), stdout=PIPE, stderr=PIPE)
   out, err = p.communicate()
   if out:
