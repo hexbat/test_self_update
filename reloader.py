@@ -12,6 +12,7 @@ def update():
 	if err:
 		print('Error while pull')
 		print(err)
+		print("--------")
 	elif out:
 		Popen(dirname(realpath(__file__)) + "/self_update.py", shell=True)
 		exit("exit to restart")
