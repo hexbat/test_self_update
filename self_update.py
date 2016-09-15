@@ -17,7 +17,7 @@ def main():
   p = Popen(cmd.split(), stdout=PIPE, stderr=PIPE)
   out, err = p.communicate()
   if out:
-    remote_hash = out
+    remote_hash = out.split()[0]
   if err:
     print('Error while getting remote hash')
     print(err)
