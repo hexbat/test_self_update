@@ -36,7 +36,10 @@ def main():
 	if (local_hash != remote_hash) and (error_code == 0):
 		print('Found update')
 		update()
-	input("press any key")
+	try:
+		input("press any key")
+	except EOFError:
+		exit("no input")
 	
 if __name__ == "__main__":
 	main()
