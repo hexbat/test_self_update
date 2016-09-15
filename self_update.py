@@ -13,12 +13,13 @@ def update():
 		print(err)
 		error_code += 1
 	elif out:
+		print(out)
 		print('Try to update')
 		args = sys.argv[:]
 		print(args)
 		print('Re-spawning %s' % ' '.join(args))
 		args.insert(0,sys.executable)
-		os.execv(sys.executable, args)
+		#os.execv(sys.executable, args)
 
 def main():
 	remote_hash = ''
