@@ -9,7 +9,7 @@ def main():
   p = Popen(cmd.split(), stdout=PIPE, stderr=PIPE)
   out, err = p.communicate()
   if out:
-    local_hash = out
+    local_hash = out.split()[0]
   if err:
     print('Error while getting local hash')
     print(err)
