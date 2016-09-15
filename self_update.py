@@ -55,8 +55,9 @@ def repeat_all(message):
 def repeat_all(message):
 	bot.send_message(message.chat.id, message.text)
 
-
-
+@bot.message_handler(commands=['a'])
+def repeat_all(message):
+	bot.send_message(message.chat.id, 'Tro-lo-lo-lol')
 
 if __name__ == "__main__":
 	bot.polling(none_stop=True)	
