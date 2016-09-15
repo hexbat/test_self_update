@@ -1,4 +1,5 @@
-#python3
+#!/usr/bin/python3
+# -*- coding: UTF-8 -*-
 
 from subprocess import Popen, PIPE, call
 import git
