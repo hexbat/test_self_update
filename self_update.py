@@ -37,8 +37,7 @@ def main():
 	if (local_hash != remote_hash) and (error_code == 0):
 		print('Found update')
 		update()
-	print("press any key")
-	input()
+	input("press any key")
 	
 if __name__ == "__main__":
 	main()
