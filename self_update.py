@@ -9,7 +9,7 @@ def update():
 	p = Popen(cmd.split(), stdout=PIPE, stderr=PIPE)
 	out, err = p.communicate()
 	if err:
-		print('Error while getting local hash')
+		print('Error while pull')
 		print(err)
 		error_code += 1
 	elif out:
