@@ -3,6 +3,7 @@
 
 from subprocess import Popen, PIPE, call
 from os.path import dirname, realpath
+from sys import exit
 
 def update():
 	cmd = 'git pull'
@@ -14,7 +15,7 @@ def update():
 		error_code += 1
 	elif out:
 		Popen(dirname(realpath(__file__)) + "/self_update.py", shell=True)
-		sys.exit("exit to restart")
+		exit("exit to restart")
 
 if __name__ == "__main__":
 	update()
