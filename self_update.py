@@ -36,8 +36,6 @@ def main():
 	if (local_hash != remote_hash) and (error_code == 0):
 		print('Found update')
 		update()
-	else:
-		print("Up to date")
 	
 if __name__ == "__main__":
 	main()
