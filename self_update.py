@@ -18,6 +18,7 @@ def self_update():
 		args.insert(0,sys.executable)
 		os.execv(sys.executable, args)
 
+
 def main():
 	remote_hash = ''
 	local_hash = ''
