@@ -5,7 +5,6 @@ from subprocess import Popen, PIPE, call
 from os.path import dirname, realpath
 import git
 
-
 def update():
 	Popen(dirname(realpath(__file__)) + "/reloader.py", shell=True)
 	sys.exit("try to update")
