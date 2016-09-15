@@ -4,7 +4,7 @@
 from subprocess import Popen, PIPE, call
 import git
 
-def self_update():
+def update():
 	cmd = 'git pull'
 	p = Popen(cmd.split(), stdout=PIPE, stderr=PIPE)
 	out, err = p.communicate()
@@ -13,7 +13,9 @@ def self_update():
 		print(err)
 		error_code += 1
 	elif out:
+		print('Try to update')
 		args = sys.argv[:]
+		print(args)
 		print('Re-spawning %s' % ' '.join(args))
 		args.insert(0,sys.executable)
 		os.execv(sys.executable, args)
@@ -45,9 +47,7 @@ def main():
 	print(remote_hash)
 	if (local_hash != remote_hash) and (error_code == 0):
 		print('Found update')
-		self_update()
-	elif error_code > 0:
-		print('Error while fetching hashes')
+		update()
 	
 if __name__ == "__main__":
 	main()
